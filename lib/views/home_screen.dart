@@ -52,7 +52,7 @@ class _NewsState extends State<News> {
                 itemCount: 6,
                 itemBuilder: (context, index) => Card30x20(),
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(width: 5);
+                  return SizedBox(width: 20);
                 },
               ),
             ),
