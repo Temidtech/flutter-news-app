@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/reusable_widgets/card_30x20.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:news_app/utils/reusable_widgets/discovery_card.dart';
 
 class News extends StatefulWidget {
   const News({Key? key}) : super(key: key);
@@ -67,14 +68,15 @@ class _NewsState extends State<News> {
               height: 15,
             ),
             Container(
-              height: 240,
+              height: 400,
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
               // height: double.maxFinite,
               child: GridView.custom(
                 shrinkWrap: true,
                 gridDelegate: SliverWovenGridDelegate.count(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 0,
+                  crossAxisSpacing: 0,
                   pattern: [
                     WovenGridTile(1),
                     WovenGridTile(
@@ -85,34 +87,14 @@ class _NewsState extends State<News> {
                   ],
                 ),
                 childrenDelegate: SliverChildBuilderDelegate(
-                  (context, index) => Card30x20(),
+                  (context, index) => DiscoveryCard(),
                 ),
               ),
             ),
             SizedBox(
               height: 35,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text("Popular",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              height: 240,
-              // height: double.maxFinite,
-              child: ListView.separated(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 6,
-                itemBuilder: (context, index) => Card30x20(),
-                separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(width: 5);
-                },
-              ),
-            ),
+
           ],
         ),
       ),
