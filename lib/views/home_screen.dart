@@ -36,7 +36,7 @@ class _NewsState extends State<News> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 8.0, top: 20),
               child: Text("Featured",
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),

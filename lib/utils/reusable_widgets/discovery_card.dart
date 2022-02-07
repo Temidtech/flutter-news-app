@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DiscoveryCard extends StatelessWidget {
   const DiscoveryCard({Key? key,
-    this.color = Colors.black, this.title = "News"}) : super(key: key);
+    this.color = Colors.greenAccent, this.title = "News"}) : super(key: key);
   final color;
   final title;
   @override
