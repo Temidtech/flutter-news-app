@@ -4,12 +4,15 @@ import 'package:news_app/views/home_screen.dart';
 
 class NewsDetails extends StatelessWidget {
   NewsDetails({Key? key, this.title = "Title",
-    this.description = " Description", this.source = "NBC", this.date = "Feb 2022"})
+    this.description = " Description", this.source = "NBC", this.date = "Feb 2022",
+    this.image = "https://picsum.photos/200/300"})
       : super(key: key);
   final title;
   final description;
   final source;
   String date;
+  final image;
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +37,18 @@ class NewsDetails extends StatelessWidget {
               Center(
                 child: Text(title,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(image == null ? "https://picsum.photos/200/300" : image),
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               SizedBox(
                 height: 20,

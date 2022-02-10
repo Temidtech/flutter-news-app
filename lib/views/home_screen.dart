@@ -73,7 +73,8 @@ class _NewsState extends State<News> {
                                         title: feature['title'],
                                       description: feature['description'],
                                       date: feature['publishedAt'],
-                                      source: feature['source']["name"],)));
+                                        image: feature['urlToImage'],
+                                        source: feature['source']["name"],)));
                             },
                             child: Card30x20(
                               source: feature['source']['name'],
@@ -133,6 +134,7 @@ class _NewsState extends State<News> {
                                               description: discover['description'],
                                               source: discover['source']["name"],
                                             date: discover['publishedAt'],
+                                            image: discover['urlToImage'],
                                           )));
                                 },
                                 child: DiscoveryCard(
