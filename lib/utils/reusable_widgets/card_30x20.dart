@@ -9,7 +9,7 @@ class Card30x20 extends StatelessWidget {
       this.date = "February 2021",
       this.tagColor = Colors.blueGrey,
       this.title = 'Title',
-      this.description = 'Description sfgsdfgsdfgdsfsdfgsffdsgdg',
+      this.description = 'Description',
       this.image = "https://picsum.photos/200/300"})
       : super(key: key);
   final source;
@@ -29,29 +29,37 @@ class Card30x20 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(8),
+          // padding: EdgeInsets.all(8),
           height: 170,
           width: 120,
           decoration: BoxDecoration(
               color: Colors.blueGrey,
               shape: BoxShape.rectangle,
               image: DecorationImage(
-                image: NetworkImage(image),
+                image: NetworkImage(image == null ? "https://picsum.photos/200/300" : image),
                 fit: BoxFit.fill,
               ),
               borderRadius: BorderRadius.circular(15)),
           child: Stack(
             children: [
+              Positioned.fill(child: Container(
+                height: 170,
+                width: 120,
+                decoration:
+                BoxDecoration(color: Colors.black.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(15)),
+              )),
               Positioned(
                 child: Container(
+                  width: 100,
                   padding: EdgeInsets.all(3),
-                  decoration:
-                      BoxDecoration(color: Colors.black.withOpacity(0.3)),
+
                   child: Text(
                     title,
                     style: TextStyle(
                       color: Colors.white,
                     ),
+                    maxLines: 2,
                   ),
                 ),
                 top: 60,
@@ -60,8 +68,6 @@ class Card30x20 extends StatelessWidget {
                 child: Container(
                     width: 100,
                     padding: EdgeInsets.all(3),
-                    decoration:
-                        BoxDecoration(color: Colors.black.withOpacity(0.3)),
                     child: Text(
                       description,
                       maxLines: 2,

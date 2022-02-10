@@ -43,6 +43,7 @@ class _NewsState extends State<News> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                var data = snapshot.data;
+               print("what is returned $data");
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -80,6 +81,7 @@ class _NewsState extends State<News> {
                               title: feature['title'],
                               image: feature['urlToImage'],
                               date: feature['publishedAt'],
+                              tagColor: getColor(),
                             ));
                         },
                         separatorBuilder: (BuildContext context, int index) {
@@ -136,7 +138,7 @@ class _NewsState extends State<News> {
                                 child: DiscoveryCard(
                                   description: discover['description'],
                                   title: discover['title'],
-                                  color: getColor(index),
+                                  color: getColor(),
                                 ));
                             },
                             childCount: data!['articles'].length),
@@ -160,7 +162,7 @@ class _NewsState extends State<News> {
   }
 }
 
-getColor(index){
+getColor(){
   // return Color((math.Random().nextDouble() * 0xFFFFFF).toInt());
   return Colors.primaries[Random().nextInt(Colors.primaries.length)];
 }

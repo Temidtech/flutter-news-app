@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:news_app/views/home_screen.dart';
 
 class NewsDetails extends StatelessWidget {
   NewsDetails({Key? key, this.title = "Title",
@@ -17,6 +18,11 @@ class NewsDetails extends StatelessWidget {
     date = dateFor.format(dateTime);
     print("this date $date");
     return Scaffold(
+      appBar: AppBar(
+        title: Text(title,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        backgroundColor: getColor(),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -27,7 +33,7 @@ class NewsDetails extends StatelessWidget {
               ),
               Center(
                 child: Text(title,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ),
               SizedBox(
                 height: 20,
